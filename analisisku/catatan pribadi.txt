@@ -1,0 +1,10 @@
+mendapatkan data user yang telah login
+1. setelah berhasil membuat fitur login dan register buat satu route baru yang akan digunakan untuk mengambil data user yang telah login
+2. beri route tersebut sebuah authentication (pada contoh dalam file api.php diberikan authentication auth:sanctum)
+3. buat method sesuai dengan route
+4. ambil data user yang login menggunakan perintah $request->user() (mengambil semua data pada tabel user sesuai dengan request yang ada)
+5. lakukan pengujian didalam postman untuk mengetahui apakah data user yang telah login berhasil diambil dengan cara melakukan login, kemudian pada bagian header, masukkan Accept dan Authorization sebagai key. Accept akan memiliki nilai 'application/json' sedangkan Authorization akan memiliki nilai 'Bearer {Kode Token}'
+
+
+catatan penting tentang route pada laravel
+1. nama variabel akan mengikuti nama dari route, misal "/dashboard/category" maka parameter yang digunakan seharusnya $category meskipun default nya adalah productcategory

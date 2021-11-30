@@ -1,0 +1,2 @@
+- app-debug diatur menjadi false (agar error tidak muncul)
+- app-env diubah menjadi production
