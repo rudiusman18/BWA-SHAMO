@@ -16,6 +16,7 @@
 
 
 
+
     <title>BWA-SHAMO | {{ $title }}</title>
 </head>
 
