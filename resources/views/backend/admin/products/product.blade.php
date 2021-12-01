@@ -93,7 +93,8 @@
                                         Images:
                                         <div class="img">
                                             @foreach ($product->productgallery as $gallery)
-                                                <img class="img-fluid my-2" src="/storage/{{ $gallery->img_url }}"
+                                                <img class="img-fluid my-2"
+                                                    src="http://shamo-bwa.herokuapp.com/storage/{{ $gallery->img_url }}"
                                                     alt="{{ $gallery->img_url }}">
 
                                             @endforeach
