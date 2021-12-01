@@ -94,7 +94,7 @@
                                         <div class="img">
                                             @foreach ($product->productgallery as $gallery)
                                                 <img class="img-fluid my-2"
-                                                    src="{{ asset('public/storage/' . $gallery->img_url) }}"
+                                                    src="{{ asset('storage/' . $gallery->img_url) }}"
                                                     alt="{{ $gallery->img_url }}">
 
                                             @endforeach
