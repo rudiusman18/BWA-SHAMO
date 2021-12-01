@@ -19,7 +19,7 @@
 
                 <form action="/" method="POST">
                     @csrf
-                    <h1 class="h3 mb-3 fw-normal text-center text-light">Admin BWA-SHAMO Login</h1>
+                    <h1 class="h3 mb-3 fw-normal text-center text-light">Admin Rudi BWA-SHAMO Login</h1>
 
                     <div class="form-floating mb-3">
                         <input type="email"
@@ -52,7 +52,7 @@
 
 
                 </form>
-                <footer class="sticky-footer">
+                <footer class="position-relative">
                     <p class="mt-5 mb-3 text-light fixed-bottom text-center">BWA-Shamo &copy; 2021</p>
                 </footer>
 
