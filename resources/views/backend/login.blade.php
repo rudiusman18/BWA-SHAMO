@@ -53,7 +53,7 @@
 
                 </form>
 
-                <p class="mt-5 mb-3 text-light fixed-bottom text-center position-fixed">
+                <p class="mt-3 mb-3 text-light text-center">
                     BWA-Shamo &copy; 2021</p>
 
             </main>
