@@ -52,9 +52,8 @@
 
 
                 </form>
-                <footer class="position-relative" style="margin-top:-200px">
-                    <p class="mt-5 mb-3 text-light fixed-bottom text-center">BWA-Shamo &copy; 2021</p>
-                </footer>
+
+                <p class="mt-5 mb-3 text-light fixed-bottom text-center position-absolute">BWA-Shamo &copy; 2021</p>
 
             </main>
         </div>
