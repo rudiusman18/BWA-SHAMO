@@ -103,6 +103,7 @@ class ProductController extends Controller
                 'product_id',
                 $product['id']
             )->get(),
+            'url' => ProductGallery::getUrlAttribute('galleries'),
             'categories' => ProductCategory::all(),
         ]);
     }
