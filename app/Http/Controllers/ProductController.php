@@ -58,14 +58,15 @@ class ProductController extends Controller
             $iteration = 0;
             $files = $request->file('images');
             foreach ($files as $file) {
-                $name = 'image' . time() . '[' . $iteration++ . ']';
+                // $name = 'image' . time() . '[' . $iteration++ . ']';
+                $name = ProductGallery::getUrlAttribute($file);
                 $extension = $file->getClientOriginalExtension();
                 $newName = $name . '.' . $extension;
                 // $file->storeAs('ProductImage', $newName);
-                Storage::putFileAs('public', $file, $newName);
+                Storage::putFileAs('public', $file, $name);
                 $data = [
                     'product_id' => $dataProduct->id,
-                    'img_url' => $newName,
+                    'img_url' => $name,
                 ];
 
                 ProductGallery::create($data);
