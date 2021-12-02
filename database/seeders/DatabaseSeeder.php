@@ -39,26 +39,26 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // create product manual
-        Product::create([
-            'product_category_id' => 1,
-            'name' => 'Indomie',
-            'price' => 15000,
-            'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
-        ]);
+        // Product::create([
+        //     'product_category_id' => 1,
+        //     'name' => 'Indomie',
+        //     'price' => 15000,
+        //     'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
+        // ]);
 
-        Product::create([
-            'product_category_id' => 2,
-            'name' => 'Sari roti',
-            'price' => 10000,
-            'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
-        ]);
+        // Product::create([
+        //     'product_category_id' => 2,
+        //     'name' => 'Sari roti',
+        //     'price' => 10000,
+        //     'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
+        // ]);
 
-        Product::create([
-            'product_category_id' => 2,
-            'name' => 'Oreo',
-            'price' => 5000,
-            'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
-        ]);
+        // Product::create([
+        //     'product_category_id' => 2,
+        //     'name' => 'Oreo',
+        //     'price' => 5000,
+        //     'description' => 'lorem ipsum dolor sit amet, consectetur adipis',
+        // ]);
 
         //membuat data kategori
         ProductCategory::create(['name' => 'makanan']);
@@ -66,73 +66,73 @@ class DatabaseSeeder extends Seeder
         ProductCategory::create(['name' => 'makanan ringan']);
 
         // membuat data transaksi
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
-        Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
+        // Transaction::create(['user_id' => mt_rand(1, 2)]);
 
         // membuat data transaction item
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
-        TransactionItem::create([
-            'user_id' => mt_rand(1, 2),
-            'product_id' => mt_rand(1, 3),
-            'transaction_id' => mt_rand(1, 6),
-            'quantity' => mt_rand(1, 10),
-        ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
+        // TransactionItem::create([
+        //     'user_id' => mt_rand(1, 2),
+        //     'product_id' => mt_rand(1, 3),
+        //     'transaction_id' => mt_rand(1, 6),
+        //     'quantity' => mt_rand(1, 10),
+        // ]);
     }
 }
