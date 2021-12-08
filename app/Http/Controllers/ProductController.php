@@ -61,17 +61,12 @@ class ProductController extends Controller
                 $name = 'image' . time() . '[' . $iteration++ . ']';
                 // $name = ProductGallery::getUrlAttribute($file);
                 $extension = $file->getClientOriginalExtension();
-                $newName =
-                    ProductGallery::getUrlAttribute($name) .
-                    '/' .
-                    $name .
-                    '.' .
-                    $extension;
+                $newName = $name . '.' . $extension;
                 // $file->storeAs('ProductImage', $newName);
                 Storage::putFileAs('public', $file, $newName);
                 $data = [
                     'product_id' => $dataProduct->id,
-                    'img_url' => $newName,
+                    'img_url' => ProductGallery::getUrlAttribute($newName),
                 ];
 
                 ProductGallery::create($data);
