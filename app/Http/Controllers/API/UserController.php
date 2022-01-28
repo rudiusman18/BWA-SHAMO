@@ -131,7 +131,7 @@ class UserController extends Controller
             $user = Auth::user();
 
             $rules = [
-                'name' => 'required|string|max:255',
+                'name' => 'string|max:255',
                 'phone_number' => 'string|max:255',
             ];
             // melakukan pengecekan apakah username sudah ada yang menggunakan atau belum selain user itu sendiri
@@ -140,10 +140,13 @@ class UserController extends Controller
             }
 
             $validateData = $request->validate($rules);
-            User::where('id', $user->id)->update($validateData);
+
+            $data = $request->all();
+            $user->update($validateData); //Ini adalah false alarm
 
             return responseFormatter::success(
-                User::where('id', $user->id)->get(),
+                $user,
+
                 'profile updated'
             );
         } catch (Exception $error) {
