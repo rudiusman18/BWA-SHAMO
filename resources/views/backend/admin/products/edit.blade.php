@@ -49,7 +49,7 @@
                         @if ($galleries->first()->img_url)
                             <div id="preview">
                                 @foreach ($galleries as $gallery)
-                                    <img style="height:100px" src="/storage/{{ $gallery->img_url }}" alt="Foto">
+                                    <img style="height:100px" src="{{ $gallery->img_url }}" alt="Foto">
                                 @endforeach
                             </div>
                         @else
