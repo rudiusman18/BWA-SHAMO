@@ -147,7 +147,7 @@ class ProductController extends Controller
                 Storage::putFileAs('public', $file, $newName);
                 $data = [
                     'product_id' => $product->id,
-                    'img_url' => $newName,
+                    'img_url' => ProductGallery::getUrlAttribute($newName),
                 ];
 
                 ProductGallery::create($data);
