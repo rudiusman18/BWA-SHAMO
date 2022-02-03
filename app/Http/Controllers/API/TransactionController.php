@@ -16,7 +16,7 @@ class TransactionController extends Controller
     {
         // untuk mengakses request
         $id = $request->input('id'); //mengambil id dari request
-        $limit = $request->input('limit', 3); // batas untuk pagination
+        $limit = $request->input('limit'); // batas untuk pagination
         $status = $request->input('status'); // mengambil status transaksi
         if ($id) {
             // jika terdapat id maka ambil data transaksi dengan id yang di request
