@@ -142,7 +142,7 @@ class UserController extends Controller
             $validateData = $request->validate($rules);
 
             $data = $request->all();
-            $user->update($validateData); //Ini adalah false alarm
+            $user->update($validateData); //NOTE: Ini adalah false alarm
 
             return responseFormatter::success(
                 $user,
