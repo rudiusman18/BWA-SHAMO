@@ -28,6 +28,6 @@ class TransactionItem extends Model
 
     public function productgallery()
     {
-        return $this->hasOne(ProductGallery::class, 'id', 'Product_id');
+        return $this->hasOne(ProductGallery::class, 'product_id', 'product_id');
     }
 }
