@@ -1,0 +1,1 @@
+1. widget terpisah digunakan ketika akan digunakan sebuah perulangan (jika tidak ada perulangan dalam satu page, maka tidak diperlukan sebuah widget baru)
