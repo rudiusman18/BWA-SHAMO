@@ -20,10 +20,9 @@ class TransactionController extends Controller
         $status = $request->input('status'); // mengambil status transaksi
         if ($id) {
             // jika terdapat id maka ambil data transaksi dengan id yang di request
-            $transaction = Transaction::with([
-                'transactionitem.product',
-                'transactionutem.productGallery',
-            ])->find($id); //mengambil data transaksi dengan id tertentu beserta data product dalam transaksi tersebut
+            $transaction = Transaction::with(['transactionitem.product'])->find(
+                $id
+            ); //mengambil data transaksi dengan id tertentu beserta data product dalam transaksi tersebut
 
             // jika variabel transaction dijalankan maka kembalikan response success
             if ($transaction) {
@@ -38,10 +37,10 @@ class TransactionController extends Controller
         }
 
         // jika kondisi tidak terpenuhi maka ambil semua data transaksi dengan id user yang sedang login
-        $transaction = Transaction::with([
-            'transactionitem.product',
-            'transactionitem.productGallery',
-        ])->where('user_id', Auth::user()->id);
+        $transaction = Transaction::with(['transactionitem.product'])->where(
+            'user_id',
+            Auth::user()->id
+        );
 
         //  mengambil data user sesuai dengan request status
         if ($status) {
