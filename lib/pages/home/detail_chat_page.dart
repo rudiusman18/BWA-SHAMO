@@ -1,11 +1,20 @@
+import 'package:bwa_shamo/models/product_model.dart';
+import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:bwa_shamo/widgets/chat_buble.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
-class DetailChatPage extends StatelessWidget {
+class DetailChatPage extends StatefulWidget {
+  @override
+  _DetailChatPageState createState() => _DetailChatPageState();
+}
+
+class _DetailChatPageState extends State<DetailChatPage> {
   @override
   Widget build(BuildContext context) {
+    ProductProvider productprovider = Provider.of<ProductProvider>(context);
     Widget header() {
       return AppBar(
         toolbarHeight: 80,
@@ -67,8 +76,8 @@ class DetailChatPage extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  'assets/images_examples_Shoes_1.png',
+                child: Image.network(
+                  '${productprovider.chatProduct.galleries!.first.url}',
                   width: 54,
                 ),
               ),
@@ -79,12 +88,12 @@ class DetailChatPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'COURT VISION SHOES',
+                    '${productprovider.chatProduct.name}',
                     style: primaryTextStyle,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    '\$57.15',
+                    '\$${productprovider.chatProduct.price}',
                     style: priceTextStyle,
                   )
                 ],
@@ -99,7 +108,11 @@ class DetailChatPage extends StatelessWidget {
                 top: 10,
               ),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  setState(() {
+                    productprovider.setChatProduct = ProductModel();
+                  });
+                },
                 child: Image.asset(
                   'assets/icon_cross.png',
                   width: 22,
@@ -168,6 +181,7 @@ class DetailChatPage extends StatelessWidget {
       );
     }
 
+    print(productprovider.chatProduct.name);
     return Scaffold(
       appBar: PreferredSize(
         child: header(),
@@ -199,7 +213,9 @@ class DetailChatPage extends StatelessWidget {
               ],
             ),
           ),
-          previewProduct(), // ini adalah fungsi yang menampilkan buble product,
+          productprovider.chatProduct.name == null
+              ? Container()
+              : previewProduct(), // ini adalah fungsi yang menampilkan buble product,
           inputChat(),
         ],
       ),

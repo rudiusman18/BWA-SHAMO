@@ -1,11 +1,15 @@
+import 'package:bwa_shamo/models/product_model.dart';
+import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:bwa_shamo/widgets/chat_tile_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
 class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ProductProvider productprovider = Provider.of(context);
     Widget header() {
       return AppBar(
         elevation: 0,
@@ -96,6 +100,8 @@ class ChatPage extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                 ),
                 onPressed: () {
+                  productprovider.setChatProduct = ProductModel();
+
                   Navigator.pushNamed(
                     context,
                     '/detail-page',

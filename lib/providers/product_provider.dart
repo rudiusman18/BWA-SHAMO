@@ -8,11 +8,19 @@ class ProductProvider with ChangeNotifier {
   List<ProductModel> _product = [];
   ProductModel _product1 = ProductModel();
   List<CategoryModel> _category = [];
+  ProductModel _chatProduct =
+      ProductModel(); // digunakan untuk mendapatkan product yang akan ditampilkan pada detail chat
 
   // mengatur getter pada ProductModel
   List<ProductModel> get product => _product;
   ProductModel get product1 => _product1;
   List<CategoryModel> get category => _category;
+  ProductModel get chatProduct => _chatProduct;
+
+  set setChatProduct(ProductModel chatProduct) {
+    _chatProduct = chatProduct;
+    notifyListeners();
+  }
 
   // Mengatur setter pada ProductModel
   set product(List<ProductModel> product) {

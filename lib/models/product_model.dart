@@ -51,6 +51,7 @@ class ProductModel {
   }
 }
 
-
-
 // NOTE untuk diri sendiri: untuk mengakses data yang ada pada model lain, maka salah satu caranya adalah dengan mengakses model tersebut, seperti yang terlihat pada line 10 dan 11, variabel category akan memiliki semua atribut yang ada pada CategoryModel, sedangkan variabel galleries akan memiliki semua atribut dari GalleryModel dalam bentuk list, penggunaan list ataupun tidak disesuikan dengan API yang ada.
+
+
+

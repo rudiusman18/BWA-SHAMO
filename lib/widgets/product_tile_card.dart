@@ -1,6 +1,8 @@
 import 'package:bwa_shamo/models/product_model.dart';
+import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
 class ProductTileCard extends StatelessWidget {
@@ -11,8 +13,11 @@ class ProductTileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProductProvider productprovider = Provider.of(context);
     return GestureDetector(
       onTap: () {
+        productprovider.product1 = product;
+        print(product.name);
         Navigator.pushNamed(
           context,
           '/product-page',

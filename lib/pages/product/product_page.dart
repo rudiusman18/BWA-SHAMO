@@ -369,6 +369,9 @@ class _ProductPageState extends State<ProductPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
+                      setState(() {
+                        productProvider.setChatProduct = product;
+                      });
                       Navigator.pushNamed(context, '/detail-page');
                     },
                     child: Container(

@@ -14,12 +14,17 @@ import 'package:bwa_shamo/providers/cart_provider.dart';
 import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/providers/transaction_provider.dart';
 import 'package:bwa_shamo/providers/wishlist_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:bwa_shamo/pages/splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
-void main(List<String> args) => runApp(MyApp());
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
