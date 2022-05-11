@@ -37,10 +37,10 @@ class TransactionController extends Controller
         }
 
         // jika kondisi tidak terpenuhi maka ambil semua data transaksi dengan id user yang sedang login
-        $transaction = Transaction::with(['transactionitem.product'])->where(
-            'user_id',
-            Auth::user()->id
-        );
+        $transaction = Transaction::with([
+            'transactionitem.product',
+            'transactionitem.productGallery',
+        ])->where('user_id', Auth::user()->id);
 
         //  mengambil data user sesuai dengan request status
         if ($status) {
@@ -87,10 +87,7 @@ class TransactionController extends Controller
         }
 
         return responseformatter::success(
-            $transaction->load([
-                'transactionitem.product',
-                'transactionitem.productGallery',
-            ]), // mengambil data pada variabel transaction serta melakukan load pada method product pada model yang ada pada transaction item pada model transaction (relationship)
+            $transaction->load(['transactionitem.product']), // mengambil data pada variabel transaction serta melakukan load pada method product pada model yang ada pada transaction item pada model transaction (relationship)
             'Transaksi Berhasil'
         );
     }
