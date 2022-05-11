@@ -26,7 +26,8 @@ class TransactionItem extends Model
         return $this->belongsTo(User::class, 'id', 'user_id');
     }
 
-    public function productGallery(){
+    public function productgallery()
+    {
         return $this->hasOne(productGallery::class, 'id', 'Product_id');
     }
 }
