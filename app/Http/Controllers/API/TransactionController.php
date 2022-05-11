@@ -87,7 +87,10 @@ class TransactionController extends Controller
         }
 
         return responseformatter::success(
-            $transaction->load(['transactionitem.product']), // mengambil data pada variabel transaction serta melakukan load pada method product pada model yang ada pada transaction item pada model transaction (relationship)
+            $transaction->load([
+                'transactionitem.product',
+                'transactionitem.productGallery',
+            ]), // mengambil data pada variabel transaction serta melakukan load pada method product pada model yang ada pada transaction item pada model transaction (relationship)
             'Transaksi Berhasil'
         );
     }
