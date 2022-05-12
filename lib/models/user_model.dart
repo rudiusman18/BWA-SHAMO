@@ -1,9 +1,9 @@
 class UserModel {
-  int id = 0;
-  String name = '';
-  String username = '';
-  String email = '';
-  String profilePhotoUrl = '';
+  int? id = 0;
+  String? name = '';
+  String? username = '';
+  String? email = '';
+  String? profilePhotoUrl = '';
   String? token;
 
   UserModel({

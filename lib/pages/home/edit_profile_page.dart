@@ -209,7 +209,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: NetworkImage(user.profilePhotoUrl),
+                  image: NetworkImage(user.profilePhotoUrl.toString()),
                   fit: BoxFit.cover,
                 ),
               ),
