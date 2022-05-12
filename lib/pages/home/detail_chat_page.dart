@@ -1,4 +1,5 @@
 import 'package:bwa_shamo/models/product_model.dart';
+import 'package:bwa_shamo/providers/auth_provider.dart';
 import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:bwa_shamo/widgets/chat_buble.dart';
@@ -12,9 +13,15 @@ class DetailChatPage extends StatefulWidget {
 }
 
 class _DetailChatPageState extends State<DetailChatPage> {
+  // Digunakan untuk menangkap value dari chat yang dikirimkan oleh user
+  TextEditingController messageController = TextEditingController(text: '');
+
   @override
   Widget build(BuildContext context) {
-    ProductProvider productprovider = Provider.of<ProductProvider>(context);
+    ProductProvider productprovider =
+        Provider.of<ProductProvider>(context); // data produk ada disini
+    AuthProvider authProvider =
+        Provider.of<AuthProvider>(context); // data user akan diambil dari sini
     Widget header() {
       return AppBar(
         toolbarHeight: 80,
@@ -142,6 +149,7 @@ class _DetailChatPageState extends State<DetailChatPage> {
                     horizontal: 16,
                   ),
                   child: TextFormField(
+                    controller: messageController,
                     style: primaryTextStyle,
                     keyboardType: TextInputType.multiline,
                     maxLines: 5,
@@ -162,7 +170,14 @@ class _DetailChatPageState extends State<DetailChatPage> {
                 height: 45,
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  print(messageController.text);
+                  // MessageService().addMessage(
+                  //     user: authProvider.user,
+                  //     isFromUser: true,
+                  //     message: messageController.text,
+                  //     product: productprovider.chatProduct);
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),

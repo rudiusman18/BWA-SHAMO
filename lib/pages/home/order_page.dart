@@ -30,7 +30,6 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    int index = -1;
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
     TransactionProvider transactionProvider =
         Provider.of<TransactionProvider>(context);
@@ -145,7 +144,6 @@ class _OrderPageState extends State<OrderPage> {
                   .map((e) => Column(
                           children: e.transactionitem!.map(
                         (a) {
-                          index++;
                           return productTileCard(
                             name: a.product!.name,
                             status: e.status,
