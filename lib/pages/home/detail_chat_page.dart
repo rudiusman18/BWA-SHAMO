@@ -1,6 +1,7 @@
 import 'package:bwa_shamo/models/product_model.dart';
 import 'package:bwa_shamo/providers/auth_provider.dart';
 import 'package:bwa_shamo/providers/product_provider.dart';
+import 'package:bwa_shamo/services/message_service.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:bwa_shamo/widgets/chat_buble.dart';
 import 'package:flutter/material.dart';
@@ -172,11 +173,11 @@ class _DetailChatPageState extends State<DetailChatPage> {
               child: ElevatedButton(
                 onPressed: () {
                   print(messageController.text);
-                  // MessageService().addMessage(
-                  //     user: authProvider.user,
-                  //     isFromUser: true,
-                  //     message: messageController.text,
-                  //     product: productprovider.chatProduct);
+                  MessageService().addMessage(
+                      user: authProvider.user,
+                      isFromUser: true,
+                      message: messageController.text,
+                      product: productprovider.chatProduct);
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
