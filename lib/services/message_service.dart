@@ -18,7 +18,7 @@ class MessageService {
         'userImage': user.profilePhotoUrl,
         'isFromUser': isFromUser,
         'message': message,
-        'product': product!.name!.isEmpty ? {} : product.toJson(),
+        'product': product!.name!.isEmpty ? '' : product.toJson(),
         'createdAt': DateTime.now().toString(),
         'updatedAt': DateTime.now().toString,
       }).then((value) => print('Pesan berhasil dikirim!'));
