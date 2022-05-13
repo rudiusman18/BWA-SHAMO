@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "908379151320",
-    "project_id": "shamo-bwa-3ffcb",
-    "storage_bucket": "shamo-bwa-3ffcb.appspot.com"
+    "project_number": "939609110884",
+    "project_id": "bwa-shamo-62a57",
+    "storage_bucket": "bwa-shamo-62a57.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:908379151320:android:489d0378542db8f5d370ad",
+        "mobilesdk_app_id": "1:939609110884:android:6a967e31a8d04daad4a271",
         "android_client_info": {
-          "package_name": "com.rudi_usman.bwa_shamo"
+          "package_name": "com.rudiusman.bwa_shamo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "908379151320-9dtkcrmd7dasjvel4mmutahdjm72nup8.apps.googleusercontent.com",
+          "client_id": "939609110884-nk2lkigt9mclfl40o7su672kv1l5sof6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQ17Cl1pH_ktBAtZqHqmnRqeRkGz9sPL4"
+          "current_key": "AIzaSyAdqIeFjkwD2tu1Hi7gi8TN4fuOQATuMao"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "908379151320-9dtkcrmd7dasjvel4mmutahdjm72nup8.apps.googleusercontent.com",
+              "client_id": "939609110884-nk2lkigt9mclfl40o7su672kv1l5sof6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
