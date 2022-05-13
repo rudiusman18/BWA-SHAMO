@@ -1,5 +1,4 @@
 import 'package:bwa_shamo/providers/auth_provider.dart';
-import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/providers/transaction_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:flutter/material.dart';
