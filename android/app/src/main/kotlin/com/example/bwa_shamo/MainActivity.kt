@@ -1,4 +1,4 @@
-package com.example.bwa_shamo
+package com.rudiusman.bwa_shamo
 
 import io.flutter.embedding.android.FlutterActivity
 

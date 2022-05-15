@@ -20,10 +20,10 @@ import 'package:bwa_shamo/pages/splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
-void main(List<String> args) async {
+Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  return runApp(MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

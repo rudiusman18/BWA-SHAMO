@@ -1,3 +1,4 @@
+import 'package:bwa_shamo/models/message_model.dart';
 import 'package:bwa_shamo/models/product_model.dart';
 import 'package:bwa_shamo/providers/auth_provider.dart';
 import 'package:bwa_shamo/providers/product_provider.dart';
@@ -173,11 +174,14 @@ class _DetailChatPageState extends State<DetailChatPage> {
               child: ElevatedButton(
                 onPressed: () {
                   print(messageController.text);
+
                   MessageService().addMessage(
                       user: authProvider.user,
                       isFromUser: true,
                       message: messageController.text,
                       product: productprovider.chatProduct);
+                  messageController.text = '';
+                  productprovider.setChatProduct = ProductModel();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -208,26 +212,27 @@ class _DetailChatPageState extends State<DetailChatPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: ListView(
-              padding: const EdgeInsets.only(
-                top: 30,
-              ),
-              children: const [
-                ChatBuble(
-                  text: 'Hi, this item is still available?',
-                  isSender: true,
-                  hasProduct: true,
-                ),
-                ChatBuble(
-                  text: 'yes, this item is still available with size 42',
-                  isSender: false,
-                ),
-                ChatBuble(
-                  text: 'Owww, it suits me very well',
-                  isSender: true,
-                )
-              ],
-            ),
+            child: StreamBuilder<List<MessageModel>>(
+                stream: MessageService()
+                    .getMessageById(userId: authProvider.user.id),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView(
+                      padding: const EdgeInsets.only(
+                        top: 30,
+                      ),
+                      children: [
+                        ChatBuble(
+                          text: 'Hi, this item is still available?',
+                          isSender: true,
+                          hasProduct: true,
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                }),
           ),
           productprovider.chatProduct.name == null
               ? Container()

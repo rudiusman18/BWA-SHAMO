@@ -47,6 +47,8 @@ class ProductModel {
       'tags': tags,
       'productgallery': galleries!.map((gallery) => gallery.toJson()).toList(),
       'productcategory': category!.toJson(),
+      'created_at': createdAt.toString(),
+      'updated_at': updatedAt.toString(),
     };
   }
 }
