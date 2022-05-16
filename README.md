@@ -1,6 +1,6 @@
 # bwa_shamo
 
-A new Flutter project.
+BWA Shamo merupakan aplikasi E Commerce yang memiliki fitur lihat katalog, melakukan checkout, dan live chat didalamnya
 
 ## Getting Started
 
@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Informasi Umum
+BWA Shamo dikembangkan dengan Flutter untuk sisi Front End dan Laravel 8 untuk sisi Back end dan API yang dihosting menggunakan heroku.
+Untuk mengakses sisi backend maka ketik "https://shamo-bwa.herokuapp.com" didalam browser. akun dengan role admin adalah rudiusmanprogrammer@gmail.com dan role user adalah raviola12@gmail.com. Password untuk masing-masing akun sama yaitu "password"
+
+
