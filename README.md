@@ -16,7 +16,6 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Informasi Umum
-]
 BWA Shamo dikembangkan dengan Flutter untuk sisi Front End dan Laravel 8 untuk sisi Back end dan API yang dihosting menggunakan heroku.
 Untuk mengakses sisi backend maka ketik "https://shamo-bwa.herokuapp.com" didalam browser. akun dengan role admin adalah rudiusmanprogrammer@gmail.com dan role user adalah raviola12@gmail.com. Password untuk masing-masing akun sama yaitu "password"
 
