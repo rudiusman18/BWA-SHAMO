@@ -27,15 +27,23 @@ class ProductModel {
   ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    price = double.parse(json['price']);
+    price = json['price'] == null ? 0 : double.parse(json['price']);
     description = json['description'];
     tags = json['tags'];
-    galleries = json['productgallery']
-        .map<GalleryModel>((gallery) => GalleryModel.fromJson(gallery))
-        .toList();
-    category = CategoryModel.fromJson(json['productcategory']);
-    createdAt = DateTime.parse(json['created_at']);
-    updatedAt = DateTime.parse(json['updated_at']);
+    galleries = json['productgallery'] == null
+        ? []
+        : json['productgallery']
+            .map<GalleryModel>((gallery) => GalleryModel.fromJson(gallery))
+            .toList();
+    category = json['productcategory'] == null
+        ? CategoryModel()
+        : CategoryModel.fromJson(json['productcategory']);
+    createdAt = json['created_at'] == null
+        ? DateTime.now()
+        : DateTime.parse(json['created_at']);
+    updatedAt = json['updated_at'] == null
+        ? DateTime.now()
+        : DateTime.parse(json['updated_at']);
   }
 
   Map<String, dynamic> toJson() {

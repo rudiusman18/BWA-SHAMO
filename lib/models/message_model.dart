@@ -5,7 +5,7 @@ class MessageModel {
   int? userId;
   String? userName;
   String? userImage;
-  bool? isFromuser;
+  bool? isFromUser;
   ProductModel product = ProductModel();
   DateTime createdAt = DateTime.now();
   DateTime updatedAt = DateTime.now();
@@ -15,8 +15,8 @@ class MessageModel {
     this.userId,
     this.userName,
     this.userImage,
-    this.isFromuser,
-    // required this.product,
+    this.isFromUser,
+    required this.product,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -25,10 +25,10 @@ class MessageModel {
     userId = json['userId'];
     userName = json['userName'];
     userImage = json['userImage'];
-    isFromuser = json['isFromuser'];
+    isFromUser = json['isFromUser'];
     product = ProductModel.fromJson(json['product']);
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
+    createdAt = DateTime.parse(json['createdAt']);
+    updatedAt = DateTime.parse(json['updatedAt']);
   }
 
   Map<String, dynamic> toJson() {
@@ -37,10 +37,10 @@ class MessageModel {
       'userId': userId,
       'userName': userName,
       'userImage': userImage,
-      'isFromuser': isFromuser,
+      'isFromUser': isFromUser,
       'product': product.toJson(),
-      'createdAt': createdAt.toString(),
-      'updatedAt': updatedAt.toString(),
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
     };
   }
 }

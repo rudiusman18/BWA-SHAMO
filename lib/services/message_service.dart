@@ -18,14 +18,14 @@ class MessageService {
           .snapshots()
           .map((QuerySnapshot list) {
         var result = list.docs.map<MessageModel>((DocumentSnapshot message) {
-          // print(message.data());
-          return MessageModel.fromJson(jsonDecode(message.data().toString()));
+          return MessageModel.fromJson(message.data()!);
         }).toList();
         // NOTE: Mengurutkan berdasarkan data paling lama
         result.sort(
           (MessageModel a, MessageModel b) =>
               a.createdAt.compareTo(b.createdAt),
         );
+        print('Ada data dibawah ini');
         return result;
       });
     } catch (e) {
@@ -44,7 +44,7 @@ class MessageService {
         'userId': user.id,
         'userName': user.name,
         'userImage': user.profilePhotoUrl,
-        'isFromUser': true, // isFromUser,
+        'isFromUser': isFromUser,
         'message': message,
         'product': product.name == null ? {} : product.toJson(),
         'createdAt': DateTime.now().toString(),

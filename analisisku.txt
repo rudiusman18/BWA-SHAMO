@@ -1,1 +1,15 @@
 1. widget terpisah digunakan ketika akan digunakan sebuah perulangan (jika tidak ada perulangan dalam satu page, maka tidak diperlukan sebuah widget baru)
+
+
+PERBEDAAN "FUTUREBUILDER" DENGAN "STREAMBUILDER"
+
+StreamBuilder dan FutureBuilder memiliki perilaku yang sama yaitu mendengarkan (listen) perubahan objek masing-masing (menyimpan perubahan fungsi (biasanya fungsi API)). dan memicu untuk melakukan build baru ketika terdapat nilai baru.
+
+Lalu, apa perbedaannya? 
+
+Perbedaan utamanya terletak pada bagaimana objek yang didengarkan (listen) bekerja. 
+
+Future merepresentasikan permintaan asynchronus. Permintaan asynchronus adalah permintaan dimana suatu fungsi atau prosedur memblokir dan menunggu nilai kembalian sebelum melanjutkan eksekusi. Future hanya memiliki satu dan hanya satu response. Future umumnya digunakan untuk melakukan handle HTTP. Apa yang didengarkan (listen) oleh Future adalah state nya. Entah itu selesai, sukses, atau memiliki error. Hanya itu.
+
+Stream disisi lain seperti iterator pada async. Strean dapat berasimilasi (menyesuaikan) dengan nilai yang dapat berubah sewaktu waktu. Biasanya merupakan representasi dari web-sockets atau events (seperti klik). Dengan mendengarkan Stream programmer dapat menerima masing-masing nilai dan juga jika Stream mengalami error atau selesai.
+

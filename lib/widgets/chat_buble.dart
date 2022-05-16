@@ -1,3 +1,4 @@
+import 'package:bwa_shamo/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bwa_shamo/theme.dart';
 
@@ -6,10 +7,15 @@ class ChatBuble extends StatelessWidget {
   final String text;
   final bool isSender;
   final bool hasProduct;
+  ProductModel? product;
 
   // ignore: use_key_in_widget_constructors
-  const ChatBuble(
-      {required this.text, this.isSender = true, this.hasProduct = false});
+  ChatBuble({
+    required this.text,
+    this.isSender = true,
+    this.hasProduct = false,
+    this.product,
+  });
 
   Widget productPreview(BuildContext context) {
     return Container(
@@ -38,8 +44,8 @@ class ChatBuble extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  'assets/images_examples_Shoes_1.png',
+                child: Image.network(
+                  '${product!.galleries![0].url}',
                   width: 70,
                   height: 70,
                   fit: BoxFit.cover,
@@ -53,7 +59,7 @@ class ChatBuble extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Court Vision Shoes',
+                      '${product!.name}',
                       maxLines: 2,
                       style: primaryTextStyle,
                       overflow: TextOverflow.ellipsis,
@@ -62,7 +68,7 @@ class ChatBuble extends StatelessWidget {
                       height: 4,
                     ),
                     Text(
-                      '\$ 57.15',
+                      '\$ ${product!.price}',
                       style: priceTextStyle.copyWith(
                         fontWeight: FontWeight.w500,
                       ),

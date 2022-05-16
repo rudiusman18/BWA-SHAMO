@@ -88,6 +88,8 @@ class _DetailChatPageState extends State<DetailChatPage> {
                 child: Image.network(
                   '${productprovider.chatProduct.galleries!.first.url}',
                   width: 54,
+                  height: 74,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -173,15 +175,18 @@ class _DetailChatPageState extends State<DetailChatPage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  print(messageController.text);
-
-                  MessageService().addMessage(
+                  if (messageController.text == '') {
+                    print('tidak ada yang dikirim');
+                  } else {
+                    MessageService().addMessage(
                       user: authProvider.user,
                       isFromUser: true,
                       message: messageController.text,
-                      product: productprovider.chatProduct);
-                  messageController.text = '';
-                  productprovider.setChatProduct = ProductModel();
+                      product: productprovider.chatProduct,
+                    );
+                    messageController.text = '';
+                    productprovider.setChatProduct = ProductModel();
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -201,7 +206,6 @@ class _DetailChatPageState extends State<DetailChatPage> {
       );
     }
 
-    print(productprovider.chatProduct.name);
     return Scaffold(
       appBar: PreferredSize(
         child: header(),
@@ -213,21 +217,25 @@ class _DetailChatPageState extends State<DetailChatPage> {
         children: [
           Expanded(
             child: StreamBuilder<List<MessageModel>>(
+                initialData: [],
                 stream: MessageService()
                     .getMessageById(userId: authProvider.user.id),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
+                    List<MessageModel> messageData = snapshot.data;
                     return ListView(
                       padding: const EdgeInsets.only(
                         top: 30,
                       ),
-                      children: [
-                        ChatBuble(
-                          text: 'Hi, this item is still available?',
-                          isSender: true,
-                          hasProduct: true,
-                        ),
-                      ],
+                      children: messageData.map((e) {
+                        print('Nilainya adalah ${e.isFromUser}');
+                        return ChatBuble(
+                          text: e.message.toString(),
+                          isSender: e.isFromUser!,
+                          hasProduct: e.product.name == null ? false : true,
+                          product: e.product,
+                        );
+                      }).toList(),
                     );
                   } else {
                     return Center(child: CircularProgressIndicator());

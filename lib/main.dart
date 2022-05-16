@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
               );
             case '/main_page/home':
               return PageTransition(
-                child: HomePage(),
+                child: MainPage(),
                 type: PageTransitionType.fade,
               );
 
