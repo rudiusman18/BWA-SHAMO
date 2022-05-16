@@ -1,7 +1,9 @@
 import 'package:bwa_shamo/pages/home/profile_page.dart';
 import 'package:bwa_shamo/pages/home/wishlist_page.dart';
+import 'package:bwa_shamo/providers/page_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'chat_page.dart';
 import 'home_page.dart';
 
@@ -12,9 +14,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int index = 0;
   @override
   Widget build(BuildContext context) {
+    PageProvider pageProvider = Provider.of(context);
     // membuat cart button
     Widget cartButton() {
       return FloatingActionButton(
@@ -40,10 +42,10 @@ class _MainPageState extends State<MainPage> {
           notchMargin: 10,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
-            currentIndex: index,
+            currentIndex: pageProvider.currentIndex,
             onTap: (value) {
               setState(() {
-                index = value;
+                pageProvider.currentIndex = value;
               });
             },
             backgroundColor: bottomNavbarColor,
@@ -55,7 +57,9 @@ class _MainPageState extends State<MainPage> {
                   child: Image.asset(
                     'assets/icon_home.png',
                     width: 21,
-                    color: index == 0 ? primaryColor : unactiveIcon,
+                    color: pageProvider.currentIndex == 0
+                        ? primaryColor
+                        : unactiveIcon,
                   ),
                 ),
                 label: "",
@@ -66,7 +70,9 @@ class _MainPageState extends State<MainPage> {
                   child: Image.asset(
                     'assets/icon_chat.png',
                     width: 20,
-                    color: index == 1 ? primaryColor : unactiveIcon,
+                    color: pageProvider.currentIndex == 1
+                        ? primaryColor
+                        : unactiveIcon,
                   ),
                 ),
                 label: "",
@@ -77,7 +83,9 @@ class _MainPageState extends State<MainPage> {
                   child: Image.asset(
                     'assets/icon_wishlist.png',
                     width: 20,
-                    color: index == 2 ? primaryColor : unactiveIcon,
+                    color: pageProvider.currentIndex == 2
+                        ? primaryColor
+                        : unactiveIcon,
                   ),
                 ),
                 label: "",
@@ -88,7 +96,9 @@ class _MainPageState extends State<MainPage> {
                   child: Image.asset(
                     'assets/icon_profile.png',
                     width: 18,
-                    color: index == 3 ? primaryColor : unactiveIcon,
+                    color: pageProvider.currentIndex == 3
+                        ? primaryColor
+                        : unactiveIcon,
                   ),
                 ),
                 label: "",
@@ -101,7 +111,7 @@ class _MainPageState extends State<MainPage> {
 
 // mengarahkan pada halaman tertentu
     Widget body() {
-      switch (index) {
+      switch (pageProvider.currentIndex) {
         case 0:
           return HomePage();
         case 1:

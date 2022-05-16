@@ -1,3 +1,4 @@
+import 'package:bwa_shamo/providers/page_provider.dart';
 import 'package:bwa_shamo/providers/wishlist_provider.dart';
 import 'package:bwa_shamo/theme.dart';
 import 'package:bwa_shamo/widgets/wishlist_tile_card.dart';
@@ -5,10 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
-class WishlistPage extends StatelessWidget {
+class WishlistPage extends StatefulWidget {
+  @override
+  _WishlistPageState createState() => _WishlistPageState();
+}
+
+class _WishlistPageState extends State<WishlistPage> {
   @override
   Widget build(BuildContext context) {
     WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
+    PageProvider pageProvider = Provider.of(context);
 
     Widget header() {
       return AppBar(
@@ -71,7 +78,7 @@ class WishlistPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/main_page');
+                  pageProvider.currentIndex = 0;
                 },
                 child: Text(
                   'Explore Store',

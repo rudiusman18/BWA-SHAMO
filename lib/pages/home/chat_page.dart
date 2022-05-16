@@ -1,6 +1,7 @@
 import 'package:bwa_shamo/models/message_model.dart';
 import 'package:bwa_shamo/models/product_model.dart';
 import 'package:bwa_shamo/providers/auth_provider.dart';
+import 'package:bwa_shamo/providers/page_provider.dart';
 import 'package:bwa_shamo/providers/product_provider.dart';
 import 'package:bwa_shamo/services/message_service.dart';
 import 'package:bwa_shamo/theme.dart';
@@ -14,6 +15,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     ProductProvider productprovider = Provider.of(context);
     AuthProvider authProvider = Provider.of(context);
+    PageProvider pageProvider = Provider.of(context);
     Widget header() {
       return AppBar(
         elevation: 0,
@@ -67,7 +69,9 @@ class ChatPage extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  pageProvider.currentIndex = 0;
+                },
                 style: TextButton.styleFrom(
                   backgroundColor: primaryColor,
                   padding: const EdgeInsets.symmetric(
