@@ -33,60 +33,58 @@ class ChatPage extends StatelessWidget {
 
     // ignore: unused_element
     Widget emptyChat() {
-      return Expanded(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          color: backgroundColor3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/icon_headset.png',
-                width: 80,
-                height: 80.5,
+      return Container(
+        width: MediaQuery.of(context).size.width,
+        color: backgroundColor3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/icon_headset.png',
+              width: 80,
+              height: 80.5,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Oops no message yet!',
+              style: primaryTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Oops no message yet!',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Text(
-                'You have never done a transaction',
-                style: secondaryTextStyle,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 24,
-                    ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Text(
+              'You have never done a transaction',
+              style: secondaryTextStyle,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 24,
                   ),
-                  child: Text(
-                    'Explore Store',
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                ),
+                child: Text(
+                  'Explore Store',
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
     }
@@ -131,7 +129,7 @@ class ChatPage extends StatelessWidget {
                     return emptyChat();
                   }
                 } else {
-                  return emptyChat();
+                  return Center(child: CircularProgressIndicator());
                 }
               }),
         ),
