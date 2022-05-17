@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bwa_shamo/theme.dart';
 
 // ignore: use_key_in_widget_constructors
+// ignore: must_be_immutable
 class ChatBuble extends StatelessWidget {
   final String text;
   final bool isSender;

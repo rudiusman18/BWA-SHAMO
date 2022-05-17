@@ -3,7 +3,6 @@ import 'package:bwa_shamo/pages/checkout_page.dart';
 import 'package:bwa_shamo/pages/checkout_success_page.dart';
 import 'package:bwa_shamo/pages/home/detail_chat_page.dart';
 import 'package:bwa_shamo/pages/home/edit_profile_page.dart';
-import 'package:bwa_shamo/pages/home/home_page.dart';
 import 'package:bwa_shamo/pages/home/main_page.dart';
 import 'package:bwa_shamo/pages/home/order_page.dart';
 import 'package:bwa_shamo/pages/login_page.dart';
