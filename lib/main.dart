@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        title: 'BWA Shamo',
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/login':

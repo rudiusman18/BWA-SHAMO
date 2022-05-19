@@ -3,9 +3,10 @@
   package="com.rudiusman.bwa_shamo"
 >
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESSS_NETWORK_STATE" />
 
    <application
-    android:label="bwa_shamo"
+    android:label="BWA Shamo"
     android:icon="@mipmap/ic_launcher"
     android:usesCleartextTraffic="true"
   >
