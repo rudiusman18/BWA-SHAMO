@@ -29,7 +29,7 @@ class LoginController extends Controller
         // if failed
         return back()->with(
             'loginFailed',
-            'Login Failed! your email or password might be false or maybe yo aren\'t admin'
+            'Login Failed! your email or password might be false or maybe you aren\'t admin'
         );
     }
 
